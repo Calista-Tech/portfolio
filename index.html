@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>mharu - Personal Portfolio</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+  <nav>
+    <div class="logo" aria-label="Logo">mharu</div>
+    <div>
+      <a href="#about" class="active">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+<main>
+  <section class="hero" id="home">
+    <img src="images/gradpic.jpg" alt="Profile Picture" class="profile-pic" />
+    <h1>Mharu</h1>
+    <p>A passionate Software Developer crafting modern web experiences.</p>
+    <a href="#contact" class="btn-primary">Get In Touch</a>
+  </section>
+  
+  <section id="about" tabindex="0">
+    <h2>About Me</h2>
+    <p>I'm Mharu, a software developer specializing in creating beautiful and performant web applications. With expertise in modern JavaScript frameworks, responsive design, and user experience, I love turning ideas into reality through clean code and innovative solutions.</p>
+  </section>
+
+  <section id="skills" tabindex="0">
+    <h2>Skills</h2>
+    <div class="skills-list">
+      <div class="skill">JavaScript (ES6+)</div>
+      <div class="skill">TypeScript</div>
+      <div class="skill">React & Redux</div>
+      <div class="skill">HTML5 & CSS3</div>
+      <div class="skill">Node.js & Express</div>
+      <div class="skill">Git & GitHub</div>
+      <div class="skill">REST APIs</div>
+      <div class="skill">Responsive Design</div>
+      <div class="skill">Webpack & Vite</div>
+    </div>
+  </section>
+
+  <section id="projects" tabindex="0">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-title">Portfolio Website</div>
+        <div class="project-description">A sleek personal portfolio site showcasing my skills and projects, built with React and styled-components.</div>
+        
+      </div>
+      <div class="project-card">
+        <div class="project-title">Task Manager App</div>
+        <div class="project-description">A full-stack task management app that allows users to add, edit, and track tasks with deadlines and categories.</div>
+      </div>
+      <div class="project-card">
+        <div class="project-title">Weather Dashboard</div>
+        <div class="project-description">A dashboard displaying current and forecasted weather data from an external API with dynamic icons and animations.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" tabindex="0">
+    <h2>Contact Me</h2>
+    <div class="contact-info">
+      <p>Email: <a href="mailto:rhumarhum@gmail.com">rhumarhum@gmail.com</a></p>
+      <p>Phone: 09568405755</p>
+      <a href="https://www.facebook.com/Khamaru.13" target="_blank" class="social-link">📘 Facebook</a>
+      <a href="https://twitter.com/@GizmoHachi30505" target="_blank" class="social-link">🐦 Twitter</a>
+      <a href="https://instagram.com/crons_me" target="_blank" class="social-link">📸 Instagram</a>
+    </div>
+  </section>
+  
+  </main>
+  <footer>
+  &copy; 2025 Mharu. All rights reserved.
+  </footer>
+  <script>
+  // Navigation active link switching on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('nav a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    const scrollY = window.pageYOffset;
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 80;
+      if(scrollY >= sectionTop) {
+        current = section.getAttribute('id');
+      }
+    });
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if(link.getAttribute('href') === '#' + current) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
+</body>
+</html>
+
